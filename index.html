@@ -38,13 +38,23 @@
                 <input id="altura" type="number" class="validate">
                 <label for="altura">Altura(cm)</label>
             </div>
-            <button class="btn waves-effect waves-light" type="submit" name="calcular" onclick="calcula_imc()">Calcular
+            <button class="btn waves-effect waves-light btn modal-trigger" href="#modal1" type="submit" name="calcular" onclick="calcula_imc()">Calcular
                 <i class="material-icons right">send</i>
             </button>
         </div>
     </div>
+    
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <p id="texto_modal"></p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Fechar</a>
+    </div>
+  </div>
 
 <script type="text/javascript" src="assets/js/materialize.min.js"></script>
 <script type="text/javascript" src="assets/js/script.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
 </body>
 </html>
