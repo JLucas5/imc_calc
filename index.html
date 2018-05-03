@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen,projection"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Cálculo IMC</title>
+    <style>
+        .modal-calc{
+            margin: 40px auto auto;
+            background-color: #e5e5e5;
+            border-radius: 10px;
+            padding: 20px;
+            width: 320px;
+        }
+        .modal-calc h1{
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-wrapper blue-grey">
+                <a href="#" class="brand-logo center" ><img src="assets/images/imc_logo.png" style="width:65px;"></a>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="modal-calc">
+            <h1>Calculador de IMC</h1>
+            <div class="input-field col s6">
+                <input id="nome" type="text" class="validate">
+                <label for="nome">Nome</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="idade" type="number" class="validate">
+                <label for="idade">Idade</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="peso" type="number" class="validate">
+                <label for="peso">Peso(Kg)</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="altura" type="number" class="validate">
+                <label for="altura">Altura(cm)</label>
+            </div>
+            <button class="btn waves-effect waves-light" type="submit" name="calcular" onclick="calcula_imc()"> Calcular
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
+    </div>
+
+<script type="text/javascript" src="assets/js/materialize.min.js"></script>
+<script type="text/javascript">
+    function calcula_imc(){
+        var altura = document.getElementById("altura");
+        var peso = document.getElementById("peso");
+
+        var quadrado = altura * altura;
+
+        var resultado = peso/quadrado;
+
+        if(resultado<18.5){
+            alert("Seu indice indic;a que você está abaixo do peso: " + resultado);
+        }
+        else if(resultado>=18.5 && resultado<25){
+            alert("Seu indice indica que você está no peso ideal: " + resultado);
+        }
+        else if(resultado>=25 && resultado<30) {
+            alert("Seu indice indica que você está acima do peso: " + resultado);
+        }
+        else if(resultado>=30 && resultado<40) {
+            alert("Seu indice indica que você está com obesidade: " + resultado);
+        }
+        else if (resultado>40)
+            alert("Seu indice indica que você está com obesidade grave: " + resultado);
+    }
+
+</script>
+</body>
+</html>
