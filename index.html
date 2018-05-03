@@ -49,7 +49,7 @@
                 <input id="altura" type="number" class="validate">
                 <label for="altura">Altura(cm)</label>
             </div>
-            <button class="btn waves-effect waves-light" type="submit" name="calcular" onclick="calcula_imc()"> Calcular
+            <button class="btn waves-effect waves-light" type="submit" name="calcular" onclick="calcula_imc()">Calcular
                 <i class="material-icons right">send</i>
             </button>
         </div>
@@ -57,30 +57,31 @@
 
 <script type="text/javascript" src="assets/js/materialize.min.js"></script>
 <script type="text/javascript">
-    function calcula_imc(){
+    function calcula_imc() {
         var altura = document.getElementById("altura");
         var peso = document.getElementById("peso");
 
         var quadrado = altura * altura;
 
-        var resultado = peso/quadrado;
+        var resultado = peso / quadrado;
 
-        if(resultado<18.5){
+        if (resultado < 18.5) {
             alert("Seu indice indic;a que você está abaixo do peso: " + resultado);
         }
-        else if(resultado>=18.5 && resultado<25){
+        else if (resultado >= 18.5 && resultado < 25) {
             alert("Seu indice indica que você está no peso ideal: " + resultado);
         }
-        else if(resultado>=25 && resultado<30) {
+        else if (resultado >= 25 && resultado < 30) {
             alert("Seu indice indica que você está acima do peso: " + resultado);
         }
-        else if(resultado>=30 && resultado<40) {
+        else if (resultado >= 30 && resultado < 40) {
             alert("Seu indice indica que você está com obesidade: " + resultado);
         }
-        else if (resultado>40)
+        else if (resultado > 40) {
             alert("Seu indice indica que você está com obesidade grave: " + resultado);
-    }
 
+        }
+    }
 </script>
 </body>
 </html>
